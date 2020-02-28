@@ -1,0 +1,5 @@
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\BL.InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.dll
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\BL.InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.pdb
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\BL.InventarioFarmacia\obj\Debug\BL.InventarioFarmacia.csprojResolveAssemblyReference.cache
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\BL.InventarioFarmacia\obj\Debug\BL.InventarioFarmacia.dll
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\BL.InventarioFarmacia\obj\Debug\BL.InventarioFarmacia.pdb

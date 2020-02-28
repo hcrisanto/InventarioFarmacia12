@@ -1,0 +1,16 @@
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\bin\Debug\InventarioFarmacia.exe.config
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\bin\Debug\InventarioFarmacia.exe
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\bin\Debug\InventarioFarmacia.pdb
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.dll
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.pdb
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.csprojResolveAssemblyReference.cache
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormLogin.resources
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormMenu.resources
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormProveedores.resources
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.Properties.Resources.resources
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.csproj.GenerateResource.Cache
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.exe
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.pdb
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormmantInventario.resources
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormProducto.resources
+C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormClientes.resources
