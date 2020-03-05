@@ -14,3 +14,6 @@ C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\Inven
 C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormmantInventario.resources
 C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormProducto.resources
 C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormClientes.resources
+C:\Users\Crisanto\Desktop\Nueva carpeta (2)\InventarioFarmacia12-master\InventarioFarmacia12\InventarioFarmacia\bin\Debug\InventarioFarmacia.exe.config
+C:\Users\Crisanto\Desktop\Nueva carpeta (2)\InventarioFarmacia12-master\InventarioFarmacia12\InventarioFarmacia\obj\Debug\InventarioFarmacia.exe
+C:\Users\Crisanto\Desktop\Nueva carpeta (2)\InventarioFarmacia12-master\InventarioFarmacia12\InventarioFarmacia\obj\Debug\InventarioFarmacia.pdb
