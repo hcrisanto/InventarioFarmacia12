@@ -20,7 +20,7 @@ namespace InventarioFarmacia
             InitializeComponent();
 
             _proveedor = new ProveedorBL();
-            listadeProvedoresBindingSource.DataSource = _proveedor.ObtenerProveedor();
+            //listaProveedoresBindingSource.DataSource = _proveedor.ObtenerProveedor();
  
 
         }
@@ -84,9 +84,44 @@ namespace InventarioFarmacia
 
         }
 
-        private void listadeProvedoresBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+      /*  private void listaProveedoresBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            
-        }
+            listaProveedoresBindingSource.EndEdit();
+            var proveedor = (Proveedor)listaProveedoresBindingSource.Current;
+            var resultado = _proveedor.GuardarProveedor(proveedor);
+
+
+            if (resultado.Exitoso == true)
+            {
+                listaProveedoresBindingSource.ResetBindings(false);
+
+            }
+            else
+            {
+                MessageBox.Show(resultado.Mensaje);
+            }
+        }*/
+
+      /*  private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            var id = Convert.ToInt32(idTextBox.Text);//convirte a numerico el string del texto
+
+            var resultado = _proveedor.EliminarProveedor(id);
+
+            if (resultado == true)
+            {
+                listaProveedorBindingSource.ResetBindings(false);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio un Errror al eliminar un producto");
+            }
+        }*/
+
+     /*   private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            _proveedor.AgregarProveedor();
+            listaProveedoresBindingSource.MoveLast();
+        }*/
     }
 }

@@ -1,5 +1,20 @@
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\BL.InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.dll
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\BL.InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.pdb
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\BL.InventarioFarmacia\obj\Debug\BL.InventarioFarmacia.csprojResolveAssemblyReference.cache
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\BL.InventarioFarmacia\obj\Debug\BL.InventarioFarmacia.dll
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\BL.InventarioFarmacia\obj\Debug\BL.InventarioFarmacia.pdb
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.dll.config
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.dll
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.pdb
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\bin\Debug\EntityFramework.dll
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\bin\Debug\EntityFramework.xml
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\obj\Debug\BL.InventarioFarmacia.csprojResolveAssemblyReference.cache
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\obj\Debug\BL.InventarioFarmacia.dll
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\obj\Debug\BL.InventarioFarmacia.pdb
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.dll.config
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.dll
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.pdb
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\bin\Debug\EntityFramework.dll
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\bin\Debug\EntityFramework.xml
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\obj\Debug\BL.InventarioFarmacia.csprojResolveAssemblyReference.cache
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\obj\Debug\BL.InventarioFarmacia.dll
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\BL.InventarioFarmacia\obj\Debug\BL.InventarioFarmacia.pdb

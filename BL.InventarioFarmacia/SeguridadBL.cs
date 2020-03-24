@@ -1,5 +1,7 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +13,12 @@ namespace BL.InventarioFarmacia
 
         List<Usurario> ListadeUsusarios;
 
+        Contexto _contexto;
+
         public SeguridadBL()
         {
+
+            _contexto = new Contexto();
             ListadeUsusarios = new List<Usurario>();
 
             var usuario1 = new Usurario();
@@ -25,25 +31,24 @@ namespace BL.InventarioFarmacia
 
             ListadeUsusarios.Add(usuario1);
             ListadeUsusarios.Add(usuario2);
+
         }
-      public  bool Autorizar(string usuario1, string contrasena1 )
+        public bool Autorizar(string usuario1, string contraseña1)
 
         {
-            if (usuario1 == "admin" && contrasena1 == "123")
-            {
-                return true;
-            } else
+            var usuario = _contexto.Usuarios.ToList();//traiga a la lista todos los usuarios estara preguntado a todos los usuarios
+
+            foreach (var usuarioDB in usuario)
 
             {
-                if (usuario1 == "administrator" && contrasena1 == "4567")
-
+                if (usuario1 == usuarioDB.Nombre && contraseña1 == usuarioDB.Contraseña)
                 {
                     return true;
+                }
             }
-
-          }
 
             return false;
         }
     }
+
 }

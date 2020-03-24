@@ -241,6 +241,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            //this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -250,6 +251,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            //this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // listadeProvedoresBindingNavigatorSaveItem
             // 
@@ -258,7 +260,7 @@
             this.listadeProvedoresBindingNavigatorSaveItem.Name = "listadeProvedoresBindingNavigatorSaveItem";
             this.listadeProvedoresBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.listadeProvedoresBindingNavigatorSaveItem.Text = "Guardar datos";
-            this.listadeProvedoresBindingNavigatorSaveItem.Click += new System.EventHandler(this.listadeProvedoresBindingNavigatorSaveItem_Click);
+           // this.listadeProvedoresBindingNavigatorSaveItem.Click += new System.EventHandler(this.listaProveedoresBindingNavigatorSaveItem_Click);
             // 
             // Cancelar
             // 
@@ -286,7 +288,7 @@
             this.listadeProvedoresDataGridView.DataSource = this.listadeProvedoresBindingSource;
             this.listadeProvedoresDataGridView.Location = new System.Drawing.Point(0, 287);
             this.listadeProvedoresDataGridView.Name = "listadeProvedoresDataGridView";
-            this.listadeProvedoresDataGridView.Size = new System.Drawing.Size(546, 220);
+            this.listadeProvedoresDataGridView.Size = new System.Drawing.Size(543, 113);
             this.listadeProvedoresDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
@@ -381,7 +383,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(625, 533);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button4);

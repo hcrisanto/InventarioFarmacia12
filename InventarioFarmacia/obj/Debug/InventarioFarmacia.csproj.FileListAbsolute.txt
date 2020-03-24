@@ -1,19 +1,42 @@
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\bin\Debug\InventarioFarmacia.exe.config
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\bin\Debug\InventarioFarmacia.exe
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\bin\Debug\InventarioFarmacia.pdb
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.dll
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.pdb
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.csprojResolveAssemblyReference.cache
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormLogin.resources
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormMenu.resources
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormProveedores.resources
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.Properties.Resources.resources
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.csproj.GenerateResource.Cache
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.exe
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.pdb
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormmantInventario.resources
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormProducto.resources
-C:\Users\Crisanto\Desktop\Inventaria_De_Farmacia-master\InventarioFarmacia\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormClientes.resources
-C:\Users\Crisanto\Desktop\Nueva carpeta (2)\InventarioFarmacia12-master\InventarioFarmacia12\InventarioFarmacia\bin\Debug\InventarioFarmacia.exe.config
-C:\Users\Crisanto\Desktop\Nueva carpeta (2)\InventarioFarmacia12-master\InventarioFarmacia12\InventarioFarmacia\obj\Debug\InventarioFarmacia.exe
-C:\Users\Crisanto\Desktop\Nueva carpeta (2)\InventarioFarmacia12-master\InventarioFarmacia12\InventarioFarmacia\obj\Debug\InventarioFarmacia.pdb
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\InventarioFarmacia.exe.config
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\InventarioFarmacia.exe
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\InventarioFarmacia.pdb
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.dll
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\EntityFramework.dll
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.pdb
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\EntityFramework.xml
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.csprojResolveAssemblyReference.cache
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormClientes.resources
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormmantInventario.resources
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormLogin.resources
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormMenu.resources
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormProveedores.resources
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormProducto.resources
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.Properties.Resources.resources
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.csproj.GenerateResource.Cache
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.exe
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.pdb
+C:\Users\Crisanto\Downloads\Compressed\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormFactura.resources
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\InventarioFarmacia.exe.config
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.exe
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.pdb
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\InventarioFarmacia.exe
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\InventarioFarmacia.pdb
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.dll
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\EntityFramework.dll
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\BL.InventarioFarmacia.pdb
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\EntityFramework.xml
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.csprojResolveAssemblyReference.cache
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormClientes.resources
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormFactura.resources
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormmantInventario.resources
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormLogin.resources
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormMenu.resources
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormProveedores.resources
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.FormProducto.resources
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.Properties.Resources.resources
+C:\Users\billy\Downloads\Inventaria_De_Farmacia-master (1)\Inventaria_De_Farmacia-master\InventarioFarmacia\obj\Debug\InventarioFarmacia.csproj.GenerateResource.Cache
