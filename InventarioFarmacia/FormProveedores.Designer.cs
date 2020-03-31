@@ -52,11 +52,6 @@
             this.listadeProvedoresBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.Cancelar = new System.Windows.Forms.ToolStripButton();
             this.listadeProvedoresDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.direccionTextBox = new System.Windows.Forms.TextBox();
             this.disponibleCheckBox = new System.Windows.Forms.CheckBox();
             this.empresaTextBox = new System.Windows.Forms.TextBox();
@@ -132,12 +127,12 @@
             // 
             // listadeProvedoresBindingSource
             // 
-            this.listadeProvedoresBindingSource.DataSource = typeof(BL.InventarioFarmacia.Proveedor);
+            listadeProvedoresBindingSource.DataSource = typeof(BL.InventarioFarmacia.Proveedor);
             // 
             // listadeProvedoresBindingNavigator
             // 
             this.listadeProvedoresBindingNavigator.AddNewItem = null;
-            this.listadeProvedoresBindingNavigator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.listadeProvedoresBindingNavigator.BackColor = System.Drawing.Color.SkyBlue;
             this.listadeProvedoresBindingNavigator.BindingSource = this.listadeProvedoresBindingSource;
             this.listadeProvedoresBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.listadeProvedoresBindingNavigator.DeleteItem = null;
@@ -241,7 +236,6 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            //this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -251,7 +245,6 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
-            //this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // listadeProvedoresBindingNavigatorSaveItem
             // 
@@ -260,7 +253,6 @@
             this.listadeProvedoresBindingNavigatorSaveItem.Name = "listadeProvedoresBindingNavigatorSaveItem";
             this.listadeProvedoresBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.listadeProvedoresBindingNavigatorSaveItem.Text = "Guardar datos";
-           // this.listadeProvedoresBindingNavigatorSaveItem.Click += new System.EventHandler(this.listaProveedoresBindingNavigatorSaveItem_Click);
             // 
             // Cancelar
             // 
@@ -279,47 +271,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listadeProvedoresDataGridView.AutoGenerateColumns = false;
             this.listadeProvedoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listadeProvedoresDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewCheckBoxColumn1});
             this.listadeProvedoresDataGridView.DataSource = this.listadeProvedoresBindingSource;
             this.listadeProvedoresDataGridView.Location = new System.Drawing.Point(0, 287);
             this.listadeProvedoresDataGridView.Name = "listadeProvedoresDataGridView";
             this.listadeProvedoresDataGridView.Size = new System.Drawing.Size(543, 113);
             this.listadeProvedoresDataGridView.TabIndex = 2;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "RTN";
-            this.dataGridViewTextBoxColumn1.HeaderText = "RTN";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Empresa";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Empresa";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Direccion";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Direccion";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Telefono";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Telefono";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Disponible";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Disponible";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
             // direccionTextBox
             // 
@@ -384,6 +340,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(625, 533);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button4);

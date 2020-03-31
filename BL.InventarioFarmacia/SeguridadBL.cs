@@ -14,7 +14,6 @@ namespace BL.InventarioFarmacia
         List<Usurario> ListadeUsusarios;
 
         Contexto _contexto;
-
         public SeguridadBL()
         {
 
@@ -50,5 +49,4 @@ namespace BL.InventarioFarmacia
             return false;
         }
     }
-
 }

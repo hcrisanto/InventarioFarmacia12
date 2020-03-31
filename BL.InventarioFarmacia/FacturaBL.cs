@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace BL.InventarioFarmacia
 {
-    public class FacturaBL
+    public class FacturasBL
     {
         Contexto _contexto;
         public BindingList<Factura> ListaFacturas { get; set; }
-        public FacturaBL()
+        public FacturasBL()
         {
             _contexto = new Contexto();
             ListaFacturas = new BindingList<Factura>();

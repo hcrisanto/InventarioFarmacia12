@@ -8,20 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static BL.InventarioFarmacia.FacturaBL;
+using static BL.InventarioFarmacia.FacturasBL;
 
 namespace InventarioFarmacia
 {
     public partial class FormFactura : Form
     {
-        FacturaBL _facturaBL;
+        FacturasBL _facturaBL;
         ClienteBL _clientesBL;
         productosBL _productosBL;
 
         public FormFactura()
         {
             InitializeComponent();
-            _facturaBL = new FacturaBL();
+            _facturaBL = new FacturasBL();
             listaFacturasBindingSource.DataSource = _facturaBL.ObtenerFacturas();
 
             _clientesBL = new ClienteBL();

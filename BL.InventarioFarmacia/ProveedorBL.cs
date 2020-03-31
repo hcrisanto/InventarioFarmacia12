@@ -24,8 +24,8 @@ namespace BL.InventarioFarmacia
 
         public BindingList<Proveedor> ObtenerProveedor()
         {
-           // _contexto..Load();
-            //ListaProveedores = _contexto.Proveedores.Local.ToBindingList();
+            _contexto.Proveedor.Load();
+            ListaProveedores = _contexto.Proveedor.Local.ToBindingList();
 
             return ListaProveedores;
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL.InventarioFarmacia;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,7 +57,8 @@ namespace InventarioFarmacia
 
         private void reporte1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var formReporteProductos = new FormReporteProductos();
+            formReporteProductos.Show();
         }
 
         private void reporte3ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,27 +68,32 @@ namespace InventarioFarmacia
 
         private void productoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var Producto = new FormProducto();
-            Producto.ShowDialog();
+            var formProducto = new FormProducto();
+            formProducto.ShowDialog();
         }
 
         private void proveedoresToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var Proveedores = new FormProveedores();
-            Proveedores.ShowDialog();
+            var formproveedores = new FormProveedores();
+            formproveedores.Show();
         }
 
         private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var Clientes = new FormClientes();
-            Clientes.ShowDialog();
+            var formClientes = new FormClientes();
+            formClientes.ShowDialog();
         }
 
         private void generarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var formFactura = new FormFactura();
-            formFactura.MdiParent = this;
             formFactura.Show();
+        }
+
+        private void reporteDeFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formReporteFacturas = new FormReporteFactura();
+            formReporteFacturas.Show();
         }
     }
 }

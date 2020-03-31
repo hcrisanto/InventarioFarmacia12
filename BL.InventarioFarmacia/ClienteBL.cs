@@ -71,7 +71,6 @@ namespace BL.InventarioFarmacia
             resultado.Mensaje = "Cliente Guardado Exitosamente";
             resultado.Exitoso = true;
             return resultado;
-
         }
         public void AgregarCliente()
         {

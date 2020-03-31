@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 
 namespace BL.InventarioFarmacia
 {
-    public class Contexto: DbContext
+    public class Contexto : DbContext
     {
-        public Contexto(): base("Inventario")
+        public Contexto() : base(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDBFilename=" +
+            Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\InventarioDB.mdf")
         {
 
         }
