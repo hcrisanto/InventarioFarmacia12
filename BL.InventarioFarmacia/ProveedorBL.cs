@@ -11,7 +11,6 @@ namespace BL.InventarioFarmacia
     public class ProveedorBL
     {
         Contexto _contexto;
-        //public BindingList<Proveedor> ListadeProveedores { get; set; }
         public BindingList<Proveedor> ListaProveedores { get; set; }
 
         public ProveedorBL()
@@ -25,25 +24,25 @@ namespace BL.InventarioFarmacia
         public BindingList<Proveedor> ObtenerProveedor()
         {
             _contexto.Proveedor.Load();
-            ListaProveedores = _contexto.Proveedor.Local.ToBindingList();
+           ListaProveedores = _contexto.Proveedor.Local.ToBindingList();
 
             return ListaProveedores;
 
         }
 
-      /*  public BindingList<Proveedor> BuscarProveedor(string nombre)
+      public BindingList<Proveedor> BuscarProveedor(string nombre)
         {
-            var resultado = _contexto.Proveedores
-           // .Where(a => a.Id.ToLower().Contains(nombre.ToLower()) == true)
+            var resultado = _contexto.Proveedor
+           .Where(a => a.Telefono.ToLower().Contains(nombre.ToLower()) == true)
             .ToList();
 
             ListaProveedores = new BindingList<Proveedor>(resultado);
 
-           // return ListaProveedores;
+           return ListaProveedores;
 
-        }*/
-
-         public Resultado GuardarProoveedor(Proveedor proveedor)
+        }
+        
+        public Resultado GuardarProveedor(Proveedor proveedor)
         {
             var resultado = Validar(proveedor);
             if (resultado.Exitoso == false)
@@ -55,6 +54,7 @@ namespace BL.InventarioFarmacia
             _contexto.SaveChanges();
 
             resultado.Exitoso = true;
+            resultado.Mensaje = "Proveedor Guardado Exitosamente";
             return resultado;
         }
         
@@ -81,15 +81,46 @@ namespace BL.InventarioFarmacia
             return false;
         }
 
+        public void CancelarCambios()
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())//Contexto = guarda una memoria de todo lo que trajo  de la bd.// Tracker = son todos los cabios eliminar, agregar,actualizar,
+            {                                                      //Entries = Pueden ser generados de un cliente,factura,un producto,y queda almacenado ChangeTracker.
+                item.State = EntityState.Unchanged;
+                item.Reload();
+
+            }
+        }
+
         private Resultado Validar(Proveedor proveedor)
           {
             var resultado = new Resultado();
             resultado.Exitoso = true;
 
+            if (string.IsNullOrEmpty(proveedor.Empresa) == true)
+            {
+                resultado.Mensaje = "Ingrese el nombre de la empresa";
+                resultado.Exitoso = false;
+            }
+
+
+            if (proveedor.RTN < 0)
+            {
+                resultado.Mensaje = "El RTN no debe estar vacio";
+                resultado.Exitoso = false;
+            }
+
+
+            if (proveedor.Direccion == null)
+            {
+                resultado.Mensaje = "LA direccion no debe estar Vacia";
+                resultado.Exitoso = false;
+            }
+
             return resultado;
           }
-    }
 
+
+    }
     public class Proveedor
     {
         public int Id { get; set; }
@@ -100,5 +131,6 @@ namespace BL.InventarioFarmacia
         public bool Disponible { get; set; }
 
     }
+
 }
 

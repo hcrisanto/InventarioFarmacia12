@@ -8,50 +8,56 @@ using System.Threading.Tasks;
 
 namespace BL.InventarioFarmacia
 {
-    public class FacturasBL
+    public class FacturaBL
     {
         Contexto _contexto;
-        public BindingList<Factura> ListaFacturas { get; set; }
-        public FacturasBL()
-        {
+
+        public BindingList<Factura> ListadeFacturas { get; set; }
+
+        public FacturaBL()
+        {   
             _contexto = new Contexto();
-            ListaFacturas = new BindingList<Factura>();
         }
         public BindingList<Factura> ObtenerFacturas()
         {
             _contexto.Facturas.Include("FacturaDetalle").Load();
-            ListaFacturas = _contexto.Facturas.Local.ToBindingList();
+            ListadeFacturas = _contexto.Facturas.Local.ToBindingList();
 
-            return ListaFacturas;
+            return ListadeFacturas;
         }
-        public void AgregarFactura()
+        public void AgregarFattura()
         {
             var nuevaFactura = new Factura();
             _contexto.Facturas.Add(nuevaFactura);
         }
+
         public void AgregarFacturaDetalle(Factura factura)
         {
-            if (factura != null)
+            if (factura !=null)
             {
                 var nuevoDetalle = new FacturaDetalle();
                 factura.FacturaDetalle.Add(nuevoDetalle);
             }
         }
-        public void RemoverFacturaDetalle(Factura factura, FacturaDetalle facturaDetalle)
+
+        public void RemoverFacturaDetalle(Factura factura, FacturaDetalle facturadetalle)
         {
-            if (factura != null && facturaDetalle != null)
+            if (factura != null && facturadetalle != null)
             {
-                factura.FacturaDetalle.Remove(facturaDetalle);
+                factura.FacturaDetalle.Remove(facturadetalle);
             }
         }
+
         public void CancelarCambios()
         {
             foreach (var item in _contexto.ChangeTracker.Entries())//Contexto = guarda una memoria de todo lo que trajo  de la bd.// Tracker = son todos los cabios eliminar, agregar,actualizar,
             {                                                      //Entries = Pueden ser generados de un cliente,factura,un producto,y queda almacenado ChangeTracker.
                 item.State = EntityState.Unchanged;
                 item.Reload();
+
             }
         }
+
         public Resultado GuardarFactura(Factura factura)
         {
             var resultado = Validar(factura);
@@ -59,10 +65,40 @@ namespace BL.InventarioFarmacia
             {
                 return resultado;
             }
+
+            CalcularExistencia(factura);
+
             _contexto.SaveChanges();
+            resultado.Mensaje = "Factura Guardada Exitosamente";
             resultado.Exitoso = true;
             return resultado;
+
         }
+
+        private void CalcularExistencia(Factura factura)
+        {
+            
+            foreach (var detalle in factura.FacturaDetalle)
+            {
+                var producto = _contexto.Productos.Find(detalle.ProductoId);
+                if (producto != null)
+                {
+                   
+                    if (factura.Activo == true)
+                    {
+                        producto.Existencia = producto.Existencia - detalle.Cantidad;
+
+                    }
+                    else
+                    {
+                        producto.Existencia = producto.Existencia + detalle.Cantidad;
+                    }
+                    
+                }
+            }
+            
+        }
+
         private Resultado Validar(Factura factura)
         {
             var resultado = new Resultado();
@@ -70,14 +106,21 @@ namespace BL.InventarioFarmacia
 
             if (factura == null)
             {
-                resultado.Mensaje = "Agregue una factura para poderla salvar";
+                resultado.Mensaje = "Agregue una factura para poder Salvar";
                 resultado.Exitoso = false;
+
                 return resultado;
+            }
+
+            if (factura.Id !=0 && factura.Activo == true)
+            {
+                resultado.Mensaje = "La Factura ya fue emitida y no se pueden realizar cambios en ella";
+                resultado.Exitoso = false;
             }
 
             if (factura.Activo == false)
             {
-                resultado.Mensaje = "La factura esta anulada y no se pueden realizar cambios en ella";
+                resultado.Mensaje = "La Factura esta anulada y no se pueden realizar cambios en ella";
                 resultado.Exitoso = false;
             }
 
@@ -89,7 +132,7 @@ namespace BL.InventarioFarmacia
 
             if (factura.FacturaDetalle.Count == 0)
             {
-                resultado.Mensaje = "Agregue productos a la factura";
+                resultado.Mensaje = "Agregue Productos a la Factura";
                 resultado.Exitoso = false;
             }
 
@@ -97,13 +140,34 @@ namespace BL.InventarioFarmacia
             {
                 if (detalle.ProductoId == 0)
                 {
-                    resultado.Mensaje = "seleccione productos validos";
+                    resultado.Mensaje = "Seleccione productos validos";
                     resultado.Exitoso = false;
                 }
             }
+                        
             return resultado;
         }
 
+        public string VerificarExistencia(FacturaDetalle detalle)
+        {
+            var mensaje = "";
+
+            var producto = _contexto.Productos.Find(detalle.ProductoId);
+
+            if (detalle.Cantidad <=0)
+            {
+                mensaje = "No se permite Facturar cantidades Menores a Cero";
+            }
+
+            if (detalle.Cantidad >   producto.Existencia)
+            {
+               mensaje = "La cantidad solicitada es mayor a la existencia";
+            }
+            
+
+            return mensaje;
+
+        }
         public void CalcularFactura(Factura factura)
         {
             if (factura != null)
@@ -113,8 +177,7 @@ namespace BL.InventarioFarmacia
                 foreach (var detalle in factura.FacturaDetalle)
                 {
                     var producto = _contexto.Productos.Find(detalle.ProductoId);
-
-                    if (producto != null)
+                    if (producto!= null)
                     {
                         detalle.Precio = producto.Precio;
                         detalle.Total = detalle.Cantidad * producto.Precio;
@@ -127,28 +190,33 @@ namespace BL.InventarioFarmacia
                 factura.Impuesto = subtotal * 0.15;
                 factura.Total = subtotal + factura.Impuesto;
             }
+
         }
 
         public bool AnularFactura(int id)
         {
-            foreach (var factura in ListaFacturas)
+            foreach (var factura in ListadeFacturas)
             {
                 if (factura.Id == id)
                 {
                     factura.Activo = false;
+                    CalcularExistencia(factura);
                     _contexto.SaveChanges();
+
                     return true;
                 }
             }
             return false;
         }
-    }
+
+      }
+
     public class Factura
     {
         public int Id { get; set; }
         public DateTime Fecha { get; set; }
         public int ClienteId { get; set; }
-        public Cliente Cliete { get; set; }
+        public Cliente  CLiente { get; set; }
         public BindingList<FacturaDetalle> FacturaDetalle { get; set; }
         public double Subtotal { get; set; }
         public double Impuesto { get; set; }
@@ -177,4 +245,5 @@ namespace BL.InventarioFarmacia
             Cantidad = 1;
         }
     }
+        
 }

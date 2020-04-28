@@ -32,6 +32,23 @@ namespace BL.InventarioFarmacia
 
         }
 
+        public BindingList<Producto> ObtenerProducto(string buscar)
+        {
+            var query = _contexto.Productos
+               .Where(p => p.Descripcion.ToLower()
+                .Contains(buscar.ToLower()) == true)
+                       .ToList();
+
+            var resultado = new BindingList<Producto>(query);
+
+            return resultado;
+        }
+
+        internal object ObtenerProductos()
+        {
+            throw new NotImplementedException();
+        }
+
         public BindingList<Producto> BuscarProducto(string nombre)
         {
             var resultado = _contexto.Productos
@@ -42,6 +59,16 @@ namespace BL.InventarioFarmacia
 
             return ListaProductos;
 
+        }
+
+        public void CancelarCambios()
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())//Contexto = guarda una memoria de todo lo que trajo  de la bd.// Tracker = son todos los cabios eliminar, agregar,actualizar,
+            {                                                      //Entries = Pueden ser generados de un cliente,factura,un producto,y queda almacenado ChangeTracker.
+                item.State = EntityState.Unchanged;
+                item.Reload();
+
+            }
         }
 
         public Resultado GuardarProducto(Producto productos)
@@ -60,12 +87,11 @@ namespace BL.InventarioFarmacia
             return resultado;
         }
 
+
         public void AgregarProducto()
         {
             var nuevoProducto = new Producto();
-            ListaProductos.Add(nuevoProducto);
-
-           
+            _contexto.Productos.Add(nuevoProducto);
         }
 
         public bool EliminarProducto(int id)
@@ -91,12 +117,12 @@ namespace BL.InventarioFarmacia
 
             if (producto == null)
             {
-                resultado.Mensaje = "Agregue un producto valido por favor";
+                resultado.Mensaje = "Agregue un Producto Valido";
                 resultado.Exitoso = false;
 
                 return resultado;
-
             }
+
             if (string.IsNullOrEmpty(producto.Descripcion) == true)
             {
                 resultado.Mensaje = "Ingrese una Descripcion";
@@ -153,6 +179,13 @@ namespace BL.InventarioFarmacia
         {
             Activo = true;
         }
+
+    }
+
+    public class Resultado
+    {
+        public bool Exitoso { get; set; }
+        public string Mensaje { get; set; }
 
     }
 }

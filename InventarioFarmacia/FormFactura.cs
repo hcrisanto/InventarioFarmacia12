@@ -8,21 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static BL.InventarioFarmacia.FacturasBL;
 
 namespace InventarioFarmacia
 {
     public partial class FormFactura : Form
     {
-        FacturasBL _facturaBL;
+        FacturaBL _facturasBL;
         ClienteBL _clientesBL;
         productosBL _productosBL;
+        
 
         public FormFactura()
         {
             InitializeComponent();
-            _facturaBL = new FacturasBL();
-            listaFacturasBindingSource.DataSource = _facturaBL.ObtenerFacturas();
+            _facturasBL = new FacturaBL();
+            listadeFacturasBindingSource.DataSource = _facturasBL.ObtenerFacturas();
 
             _clientesBL = new ClienteBL();
             listadeClientesBindingSource.DataSource = _clientesBL.ObtenerClientes();
@@ -30,25 +30,27 @@ namespace InventarioFarmacia
             _productosBL = new productosBL();
             listaProductosBindingSource.DataSource = _productosBL.ObtenerProducto();
 
+        }
 
-
+        private void subtotalTextBox_TextChanged(object sender, EventArgs e)
+        {
 
         }
 
-        private void FormFactura_Load(object sender, EventArgs e)
+        private void subtotalLabel_Click(object sender, EventArgs e)
         {
 
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            _facturaBL.AgregarFactura();
-            listaFacturasBindingSource.MoveLast();
+            _facturasBL.AgregarFattura();
+            listadeFacturasBindingSource.MoveLast();
 
             DeshabilitarHabilitarBotones(false);
         }
 
-        private void DeshabilitarHabilitarBotones(bool valor)
+        private void DeshabilitarHabilitarBotones (bool valor)
         {
             bindingNavigatorMoveFirstItem.Enabled = valor;
             bindingNavigatorMoveLastItem.Enabled = valor;
@@ -59,76 +61,48 @@ namespace InventarioFarmacia
             bindingNavigatorAddNewItem.Enabled = valor;
             bindingNavigatorDeleteItem.Enabled = valor;
             toolStripButtonCancelar.Visible = !valor;
-
         }
 
-        private void listaFacturasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void listadeFacturasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            listaFacturasBindingSource.EndEdit();
+            listadeFacturasBindingSource.EndEdit();
 
-            var factura = (Factura)listaFacturasBindingSource.Current;
-            var resultado = _facturaBL.GuardarFactura(factura);
+            var factura = (Factura)listadeFacturasBindingSource.Current;
+            var resultado = _facturasBL.GuardarFactura(factura);
 
             if (resultado.Exitoso == true)
             {
-                listaFacturasBindingSource.ResetBindings(false);
+                listadeFacturasBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
-                MessageBox.Show("Factura Guardada");
-
+                MessageBox.Show("Factura Guardada Exitosamente");
             }
             else
             {
                 MessageBox.Show(resultado.Mensaje);
-
             }
         }
 
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        private void toolStripButtonCancelar_Click(object sender, EventArgs e)
         {
-            if (idTextBox.Text != "")
-            {
-                var resultado = MessageBox.Show("Desea anular esta factura?", "Anular", MessageBoxButtons.YesNo);
-                if (resultado == DialogResult.Yes)
-                {
-                    var id = Convert.ToInt32(idTextBox.Text);
-                    Anular(id);
-                }
-            }
-
-           /* DeshabilitarHabilitarBotones(true);
-            _facturaBL.CancelarCambios();
-            */
-        }
-
-        private void Anular(int id)
-        {
-            var resultado = _facturaBL.AnularFactura(id);
-
-            if (resultado == true)
-            {
-                listaFacturasBindingSource.ResetBindings(false);
-            }
-            else
-            {
-                MessageBox.Show("Ocurrio un erro al anular la factura");
-            }
+            DeshabilitarHabilitarBotones(true);
+            _facturasBL.CancelarCambios();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var factura = (Factura)listaFacturasBindingSource.Current;
-            _facturaBL.AgregarFacturaDetalle(factura);
+            var factura = (Factura)listadeFacturasBindingSource.Current;
+
+            _facturasBL.AgregarFacturaDetalle(factura);
 
             DeshabilitarHabilitarBotones(false);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var factura = (Factura)listaFacturasBindingSource.Current;
+            var factura = (Factura)listadeFacturasBindingSource.Current;
             var facturaDetalle = (FacturaDetalle)facturaDetalleBindingSource.Current;
 
-
-            _facturaBL.RemoverFacturaDetalle(factura, facturaDetalle);
+            _facturasBL.RemoverFacturaDetalle(factura, facturaDetalle);
 
             DeshabilitarHabilitarBotones(false);
         }
@@ -136,33 +110,97 @@ namespace InventarioFarmacia
         private void facturaDetalleDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             e.ThrowException = false;
-
         }
 
         private void facturaDetalleDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            var factura = (Factura)listaFacturasBindingSource.Current;
-            _facturaBL.CalcularFactura(factura);
+            var factura = (Factura)listadeFacturasBindingSource.Current;
+            var detalle = (FacturaDetalle)facturaDetalleBindingSource.Current;
+            var mensaje = _facturasBL.VerificarExistencia(detalle);
 
-            listaFacturasBindingSource.ResetBindings(false);
+            if (mensaje == "")
+            {
+                _facturasBL.CalcularFactura(factura);
+            }
+            else
+            {
+                MessageBox.Show(mensaje);
+            }
 
+            listadeFacturasBindingSource.ResetBindings(false);
+        }
+
+        private void activoCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
 
-        private void listaFacturasBindingSource_CurrentChanged(object sender, EventArgs e)
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            var factura = (Factura)listaFacturasBindingSource.Current;
+            if (idTextBox.Text != "")
+            {
+                var resultado = MessageBox.Show("Desea Anular Esta Factura?", "Anular", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
+                {
+                    var id = Convert.ToInt32(idTextBox.Text);
+                    Anular(id);
+                }
+            }
+        }
+
+        private void Anular(int id)
+        {
+            var resultado = _facturasBL.AnularFactura(id);
+
+            if (resultado == true)
+            {
+                listadeFacturasBindingSource.ResetBindings(false);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio un error al anular la factura");
+            }
+        }
+
+        private void listadeFacturasBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            var factura = (Factura)listadeFacturasBindingSource.Current;
 
             if (factura != null && factura.Id != 0 && factura.Activo == false)
             {
                 label1.Visible = true;
-
             }
             else
             {
-                label1.Visible = false; 
+                label1.Visible = false;
             }
+        }
+
+        private void FormFactura_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listaProductosBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            var producto = (Producto)listaProductosBindingSource.Current;
+                     
+        }
+
+        private void facturaDetalleBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void facturaDetalleDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void listadeClientesBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
 
         }
     }
+
 }

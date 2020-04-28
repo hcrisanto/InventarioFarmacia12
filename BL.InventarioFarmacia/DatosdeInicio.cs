@@ -1,22 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BL.InventarioFarmacia
 {
-    public  class DatosdeInicio : CreateDatabaseIfNotExists<Contexto>//Datos de inicio creera la bd si no existe no me los volvera a pedir mi bd
+    public class DatosdeInicio : CreateDatabaseIfNotExists<Contexto>//Datos de inicio creera la bd si no existe no me los volvera a pedir mi bd
 
     {
-        protected override void Seed(Contexto contexto)//Seed= es una semilla para inicialisar los datos en una bd.
+        protected override void Seed(Contexto contexto)//Seed= es una semilla para inicializar los datos en una bd.
         {
-            var usuarioAdmin = new Usurario();//se crea un usuario 
+            var usuarioAdmin = new Usuario();//se crea un usuario 
             usuarioAdmin.Nombre = "admin";    //se le crea un nombre
             usuarioAdmin.Contraseña = "123"; //y su contrasena y lo mismo se hace con categoria.
-
+            usuarioAdmin.TipoUsuario = "Administradores";
             contexto.Usuarios.Add(usuarioAdmin);
+
+            var usuarioCaja = new Usuario();//se crea un usuario 
+            usuarioCaja.Nombre = "caja";    //se le crea un nombre
+            usuarioCaja.Contraseña = "456"; //y su contrasena y lo mismo se hace con categoria.
+            usuarioCaja.TipoUsuario = "Caja";
+            contexto.Usuarios.Add(usuarioCaja);
 
             var categoria1 = new Categoria();//llama a la descripcion y nos dara un mensaje
             categoria1.Descripcion = "Infantil y Adulto";
@@ -54,9 +61,31 @@ namespace BL.InventarioFarmacia
             tipo4.Descripcion = "Humanos"; // personal de la farmacia
             contexto.Tipos.Add(tipo4);
 
-            
-            base.Seed(contexto);//Con la instruccion "base.Seed" se embia a la b.d. y se crean los datos de prueba
+            string path = Directory.GetCurrentDirectory();
 
+            var archivo = "../../../clientes.csv";
+            using (var reader = new StreamReader(archivo))
+            {
+                reader.ReadLine(); // Lee primera fila de encabezados
+
+                while (!reader.EndOfStream)
+                {
+                    var linea = reader.ReadLine();
+                    var valores = linea.Split(',');
+
+                    var clienteNuevo = new Cliente();
+                    clienteNuevo.Nombre = valores[0].ToString();
+                    clienteNuevo.Apellido = valores[1].ToString();
+                    clienteNuevo.Correo = valores[2].ToString();
+                    clienteNuevo.Direccion = valores[3].ToString();
+                    clienteNuevo.Rtn = valores[4].ToString();
+                    
+                    contexto.Clientes.Add(clienteNuevo);
+                }
+            
+              }
+                                
+            base.Seed(contexto);
         }
     }
 }

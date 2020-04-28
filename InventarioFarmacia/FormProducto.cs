@@ -18,9 +18,6 @@ namespace InventarioFarmacia
         CategoriasBL _categorias;
         TiposBL _tiposBL;
         
-
-        //private readonly object listaCategoriasBindingSource;
-
         public FormProducto()
         {
             InitializeComponent();
@@ -61,6 +58,7 @@ namespace InventarioFarmacia
           if(resultado.Exitoso == true)
            {
                 MessageBox.Show(resultado.Mensaje);
+                DeshabilitarHabilitarBotones(true);
                 listaProductosBindingSource.ResetBindings(false);
 
             }
@@ -76,6 +74,21 @@ namespace InventarioFarmacia
         {
             _productos.AgregarProducto();
             listaProductosBindingSource.MoveLast();
+
+            DeshabilitarHabilitarBotones(false);
+        }
+
+        private void DeshabilitarHabilitarBotones(bool valor)
+        {
+            bindingNavigatorMoveFirstItem.Enabled = valor;
+            bindingNavigatorMoveLastItem.Enabled = valor;
+            bindingNavigatorMovePreviousItem.Enabled = valor;
+            bindingNavigatorMoveNextItem.Enabled = valor;
+            bindingNavigatorPositionItem.Enabled = valor;
+
+            bindingNavigatorAddNewItem.Enabled = valor;
+            bindingNavigatorDeleteItem.Enabled = valor;
+            toolStripButtonCancelar.Visible = !valor;
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -96,13 +109,7 @@ namespace InventarioFarmacia
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            listaProductosBindingSource.DataSource = _productos.BuscarProducto(textBox1.Text);
-
-            listaProductosBindingSource.ResetBindings(false);
-        }
-
+        
         private void idTextBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -171,6 +178,41 @@ namespace InventarioFarmacia
         }
 
         private void descripcionLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButtonCancelar_Click(object sender, EventArgs e)
+        {
+            DeshabilitarHabilitarBotones(true);
+            _productos.CancelarCambios();
+        }
+
+        private void listaProductosDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            var row = sender;
+            var row2 = e;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var buscar = textBox2.Text;
+
+            if (string.IsNullOrEmpty(buscar) == true)
+            {
+                listaProductosBindingSource.DataSource =
+                    _productos.ObtenerProducto();
+            }
+            else
+            {
+                listaProductosBindingSource.DataSource = _productos.ObtenerProducto(buscar);
+            }
+
+
+            listaProductosBindingSource.ResetBindings(false);
+        }
+
+        private void disponibleCheckBox_CheckedChanged(object sender, EventArgs e)
         {
 
         }

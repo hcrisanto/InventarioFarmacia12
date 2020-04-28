@@ -51,10 +51,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>..\..\..\..\..\program files\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>..\..\..\..\..\program files\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>..\..\..\..\..\program files\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>..\..\..\..\..\program files\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -86,6 +94,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet.cs">
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -122,30 +133,37 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProveedores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormProveedores.Designer.cs">
-      <DependentUpon>FormProveedores.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormProducto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormProducto.Designer.cs">
       <DependentUpon>FormProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReporteFactura.cs">
+    <Compile Include="FormProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormReporteFactura.Designer.cs">
-      <DependentUpon>FormReporteFactura.cs</DependentUpon>
+    <Compile Include="FormProveedores.Designer.cs">
+      <DependentUpon>FormProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReporteProductos.cs">
+    <Compile Include="FormReporteFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormReporteProductos.Designer.cs">
-      <DependentUpon>FormReporteProductos.cs</DependentUpon>
+    <Compile Include="FormReporteFacturas.Designer.cs">
+      <DependentUpon>FormReporteFacturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReporteProducto2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReporteProducto2.Designer.cs">
+      <DependentUpon>FormReporteProducto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUsuario.Designer.cs">
+      <DependentUpon>FormUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductosBL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReporteFacturas.cs">
@@ -179,17 +197,20 @@
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProveedores.resx">
-      <DependentUpon>FormProveedores.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormProducto.resx">
       <DependentUpon>FormProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormReporteFactura.resx">
-      <DependentUpon>FormReporteFactura.cs</DependentUpon>
+    <EmbeddedResource Include="FormProveedores.resx">
+      <DependentUpon>FormProveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormReporteProductos.resx">
-      <DependentUpon>FormReporteProductos.cs</DependentUpon>
+    <EmbeddedResource Include="FormReporteFacturas.resx">
+      <DependentUpon>FormReporteFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReporteProducto2.resx">
+      <DependentUpon>FormReporteProducto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsuario.resx">
+      <DependentUpon>FormUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -223,15 +244,24 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BL.InventarioFarmacia.Categoria.datasource" />
     <None Include="Properties\DataSources\BL.InventarioFarmacia.CategoriasBL.datasource" />
+    <None Include="Properties\DataSources\BL.InventarioFarmacia.Cliente.datasource" />
     <None Include="Properties\DataSources\BL.InventarioFarmacia.ClienteBL+Cliente.datasource" />
     <None Include="Properties\DataSources\BL.InventarioFarmacia.ClienteBL.datasource" />
+    <None Include="Properties\DataSources\BL.InventarioFarmacia.Contexto.datasource" />
+    <None Include="Properties\DataSources\BL.InventarioFarmacia.DatosdeInicio.datasource" />
+    <None Include="Properties\DataSources\BL.InventarioFarmacia.Factura.datasource" />
     <None Include="Properties\DataSources\BL.InventarioFarmacia.FacturaBL.datasource" />
+    <None Include="Properties\DataSources\BL.InventarioFarmacia.FacturaDetalle.datasource" />
+    <None Include="Properties\DataSources\BL.InventarioFarmacia.FormReporteProductos.datasource" />
     <None Include="Properties\DataSources\BL.InventarioFarmacia.Producto.datasource" />
     <None Include="Properties\DataSources\BL.InventarioFarmacia.ProductoBL.datasource" />
     <None Include="Properties\DataSources\BL.InventarioFarmacia.productosBL.datasource" />
     <None Include="Properties\DataSources\BL.InventarioFarmacia.Proveedor.datasource" />
     <None Include="Properties\DataSources\BL.InventarioFarmacia.ProveedorBL.datasource" />
+    <None Include="Properties\DataSources\BL.InventarioFarmacia.Resultado.datasource" />
+    <None Include="Properties\DataSources\BL.InventarioFarmacia.SeguridadBL+Usurario.datasource" />
     <None Include="Properties\DataSources\BL.InventarioFarmacia.SeguridadBL.datasource" />
+    <None Include="Properties\DataSources\BL.InventarioFarmacia.Tipo.datasource" />
     <None Include="Properties\DataSources\BL.InventarioFarmacia.TiposBL.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -244,9 +274,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

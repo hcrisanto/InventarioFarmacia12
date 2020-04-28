@@ -54,7 +54,7 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.listaProductosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.Cancelar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
             this.listaProductosDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,8 +71,6 @@
             this.medicamentoTextBox = new System.Windows.Forms.TextBox();
             this.precioTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.fotoPictureBox = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -81,6 +79,8 @@
             this.listaCategoriasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tipoIdComboBox1 = new System.Windows.Forms.ComboBox();
             this.descripcionComboBox = new System.Windows.Forms.ComboBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             descripcionLabel = new System.Windows.Forms.Label();
             disponibleLabel = new System.Windows.Forms.Label();
             existenciaLabel = new System.Windows.Forms.Label();
@@ -103,18 +103,20 @@
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
+            descripcionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             descripcionLabel.Location = new System.Drawing.Point(9, 87);
             descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel.Size = new System.Drawing.Size(95, 16);
             descripcionLabel.TabIndex = 52;
             descripcionLabel.Text = "Descripcion:";
             // 
             // disponibleLabel
             // 
             disponibleLabel.AutoSize = true;
+            disponibleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             disponibleLabel.Location = new System.Drawing.Point(6, 250);
             disponibleLabel.Name = "disponibleLabel";
-            disponibleLabel.Size = new System.Drawing.Size(59, 13);
+            disponibleLabel.Size = new System.Drawing.Size(87, 16);
             disponibleLabel.TabIndex = 54;
             disponibleLabel.Text = "Disponible:";
             disponibleLabel.Click += new System.EventHandler(this.disponibleLabel_Click);
@@ -122,27 +124,30 @@
             // existenciaLabel
             // 
             existenciaLabel.AutoSize = true;
+            existenciaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             existenciaLabel.Location = new System.Drawing.Point(6, 219);
             existenciaLabel.Name = "existenciaLabel";
-            existenciaLabel.Size = new System.Drawing.Size(58, 13);
+            existenciaLabel.Size = new System.Drawing.Size(83, 16);
             existenciaLabel.TabIndex = 56;
             existenciaLabel.Text = "Existencia:";
             // 
             // idLabel
             // 
             idLabel.AutoSize = true;
+            idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             idLabel.Location = new System.Drawing.Point(12, 36);
             idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(19, 13);
+            idLabel.Size = new System.Drawing.Size(25, 16);
             idLabel.TabIndex = 58;
             idLabel.Text = "Id:";
             // 
             // literaLabel
             // 
             literaLabel.AutoSize = true;
+            literaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             literaLabel.Location = new System.Drawing.Point(6, 193);
             literaLabel.Name = "literaLabel";
-            literaLabel.Size = new System.Drawing.Size(36, 13);
+            literaLabel.Size = new System.Drawing.Size(51, 16);
             literaLabel.TabIndex = 60;
             literaLabel.Text = "Litera:";
             literaLabel.Click += new System.EventHandler(this.literaLabel_Click);
@@ -150,25 +155,27 @@
             // medicamentoLabel
             // 
             medicamentoLabel.AutoSize = true;
+            medicamentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             medicamentoLabel.Location = new System.Drawing.Point(9, 61);
             medicamentoLabel.Name = "medicamentoLabel";
-            medicamentoLabel.Size = new System.Drawing.Size(74, 13);
+            medicamentoLabel.Size = new System.Drawing.Size(105, 16);
             medicamentoLabel.TabIndex = 62;
             medicamentoLabel.Text = "Medicamento:";
             // 
             // precioLabel
             // 
             precioLabel.AutoSize = true;
+            precioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             precioLabel.Location = new System.Drawing.Point(6, 166);
             precioLabel.Name = "precioLabel";
-            precioLabel.Size = new System.Drawing.Size(40, 13);
+            precioLabel.Size = new System.Drawing.Size(57, 16);
             precioLabel.TabIndex = 64;
             precioLabel.Text = "Precio:";
             // 
             // fotoLabel
             // 
             fotoLabel.AutoSize = true;
-            fotoLabel.Location = new System.Drawing.Point(433, 40);
+            fotoLabel.Location = new System.Drawing.Point(399, 54);
             fotoLabel.Name = "fotoLabel";
             fotoLabel.Size = new System.Drawing.Size(31, 13);
             fotoLabel.TabIndex = 65;
@@ -177,18 +184,20 @@
             // tipoIdLabel1
             // 
             tipoIdLabel1.AutoSize = true;
-            tipoIdLabel1.Location = new System.Drawing.Point(12, 110);
+            tipoIdLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tipoIdLabel1.Location = new System.Drawing.Point(9, 111);
             tipoIdLabel1.Name = "tipoIdLabel1";
-            tipoIdLabel1.Size = new System.Drawing.Size(31, 13);
+            tipoIdLabel1.Size = new System.Drawing.Size(44, 16);
             tipoIdLabel1.TabIndex = 69;
             tipoIdLabel1.Text = "Tipo:";
             // 
             // descripcionLabel1
             // 
             descripcionLabel1.AutoSize = true;
+            descripcionLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             descripcionLabel1.Location = new System.Drawing.Point(6, 142);
             descripcionLabel1.Name = "descripcionLabel1";
-            descripcionLabel1.Size = new System.Drawing.Size(55, 13);
+            descripcionLabel1.Size = new System.Drawing.Size(80, 16);
             descripcionLabel1.TabIndex = 70;
             descripcionLabel1.Text = "Categoria:";
             descripcionLabel1.Click += new System.EventHandler(this.descripcionLabel1_Click);
@@ -213,7 +222,7 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.listaProductosBindingNavigatorSaveItem,
-            this.Cancelar});
+            this.toolStripButtonCancelar});
             this.listaProductosBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.listaProductosBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.listaProductosBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -221,7 +230,7 @@
             this.listaProductosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaProductosBindingNavigator.Name = "listaProductosBindingNavigator";
             this.listaProductosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaProductosBindingNavigator.Size = new System.Drawing.Size(779, 25);
+            this.listaProductosBindingNavigator.Size = new System.Drawing.Size(723, 25);
             this.listaProductosBindingNavigator.TabIndex = 0;
             this.listaProductosBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -325,16 +334,17 @@
             this.listaProductosBindingNavigatorSaveItem.Text = "Guardar datos";
             this.listaProductosBindingNavigatorSaveItem.Click += new System.EventHandler(this.listaProductosBindingNavigatorSaveItem_Click);
             // 
-            // Cancelar
+            // toolStripButtonCancelar
             // 
-            this.Cancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.Cancelar.Image = ((System.Drawing.Image)(resources.GetObject("Cancelar.Image")));
-            this.Cancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Cancelar.Name = "Cancelar";
-            this.Cancelar.Size = new System.Drawing.Size(57, 22);
-            this.Cancelar.Text = "Cancelar";
-            this.Cancelar.ToolTipText = "toolStripButton1";
-            this.Cancelar.Visible = false;
+            this.toolStripButtonCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonCancelar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCancelar.Image")));
+            this.toolStripButtonCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCancelar.Name = "toolStripButtonCancelar";
+            this.toolStripButtonCancelar.Size = new System.Drawing.Size(57, 22);
+            this.toolStripButtonCancelar.Text = "Cancelar";
+            this.toolStripButtonCancelar.ToolTipText = "toolStripButton1";
+            this.toolStripButtonCancelar.Visible = false;
+            this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButtonCancelar_Click);
             // 
             // listaProductosDataGridView
             // 
@@ -342,6 +352,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listaProductosDataGridView.AutoGenerateColumns = false;
+            this.listaProductosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.listaProductosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaProductosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -352,57 +363,65 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewCheckBoxColumn1});
             this.listaProductosDataGridView.DataSource = this.listaProductosBindingSource;
-            this.listaProductosDataGridView.Location = new System.Drawing.Point(15, 337);
+            this.listaProductosDataGridView.Location = new System.Drawing.Point(15, 290);
             this.listaProductosDataGridView.Name = "listaProductosDataGridView";
-            this.listaProductosDataGridView.Size = new System.Drawing.Size(752, 427);
+            this.listaProductosDataGridView.Size = new System.Drawing.Size(671, 246);
             this.listaProductosDataGridView.TabIndex = 1;
+            this.listaProductosDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaProductosDataGridView_CellValueChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
             this.dataGridViewTextBoxColumn1.HeaderText = "Id";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 41;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Medicamento";
             this.dataGridViewTextBoxColumn2.HeaderText = "Medicamento";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 96;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Descripcion";
             this.dataGridViewTextBoxColumn3.HeaderText = "Descripcion";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 88;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Precio";
             this.dataGridViewTextBoxColumn4.HeaderText = "Precio";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 62;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Litera";
             this.dataGridViewTextBoxColumn5.HeaderText = "Litera";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 58;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Existencia";
             this.dataGridViewTextBoxColumn6.HeaderText = "Existencia";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 80;
             // 
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "Disponible";
             this.dataGridViewCheckBoxColumn1.HeaderText = "Disponible";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Width = 62;
             // 
             // descripcionTextBox
             // 
             this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductosBindingSource, "Descripcion", true));
-            this.descripcionTextBox.Location = new System.Drawing.Point(101, 84);
+            this.descripcionTextBox.Location = new System.Drawing.Point(116, 84);
             this.descripcionTextBox.Name = "descripcionTextBox";
             this.descripcionTextBox.Size = new System.Drawing.Size(285, 20);
             this.descripcionTextBox.TabIndex = 53;
@@ -410,16 +429,17 @@
             // disponibleCheckBox
             // 
             this.disponibleCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.listaProductosBindingSource, "Disponible", true));
-            this.disponibleCheckBox.Location = new System.Drawing.Point(104, 245);
+            this.disponibleCheckBox.Location = new System.Drawing.Point(117, 248);
             this.disponibleCheckBox.Name = "disponibleCheckBox";
-            this.disponibleCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.disponibleCheckBox.Size = new System.Drawing.Size(36, 24);
             this.disponibleCheckBox.TabIndex = 55;
             this.disponibleCheckBox.UseVisualStyleBackColor = true;
+            this.disponibleCheckBox.CheckedChanged += new System.EventHandler(this.disponibleCheckBox_CheckedChanged);
             // 
             // existenciaTextBox
             // 
             this.existenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductosBindingSource, "Existencia", true));
-            this.existenciaTextBox.Location = new System.Drawing.Point(101, 219);
+            this.existenciaTextBox.Location = new System.Drawing.Point(116, 219);
             this.existenciaTextBox.Name = "existenciaTextBox";
             this.existenciaTextBox.Size = new System.Drawing.Size(285, 20);
             this.existenciaTextBox.TabIndex = 57;
@@ -427,7 +447,7 @@
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductosBindingSource, "Id", true));
-            this.idTextBox.Location = new System.Drawing.Point(101, 33);
+            this.idTextBox.Location = new System.Drawing.Point(116, 33);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(285, 20);
             this.idTextBox.TabIndex = 59;
@@ -436,7 +456,7 @@
             // literaTextBox
             // 
             this.literaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductosBindingSource, "Litera", true));
-            this.literaTextBox.Location = new System.Drawing.Point(101, 193);
+            this.literaTextBox.Location = new System.Drawing.Point(116, 193);
             this.literaTextBox.Name = "literaTextBox";
             this.literaTextBox.Size = new System.Drawing.Size(285, 20);
             this.literaTextBox.TabIndex = 61;
@@ -444,7 +464,7 @@
             // medicamentoTextBox
             // 
             this.medicamentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductosBindingSource, "Medicamento", true));
-            this.medicamentoTextBox.Location = new System.Drawing.Point(101, 58);
+            this.medicamentoTextBox.Location = new System.Drawing.Point(116, 58);
             this.medicamentoTextBox.Name = "medicamentoTextBox";
             this.medicamentoTextBox.Size = new System.Drawing.Size(285, 20);
             this.medicamentoTextBox.TabIndex = 63;
@@ -452,7 +472,7 @@
             // precioTextBox
             // 
             this.precioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductosBindingSource, "Precio", true));
-            this.precioTextBox.Location = new System.Drawing.Point(101, 166);
+            this.precioTextBox.Location = new System.Drawing.Point(116, 166);
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.Size = new System.Drawing.Size(285, 20);
             this.precioTextBox.TabIndex = 65;
@@ -465,30 +485,11 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 51;
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox1.Location = new System.Drawing.Point(15, 274);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(252, 20);
-            this.textBox1.TabIndex = 49;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(273, 274);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(116, 23);
-            this.button4.TabIndex = 48;
-            this.button4.Text = "Buscar";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // fotoPictureBox
             // 
             this.fotoPictureBox.BackColor = System.Drawing.Color.Silver;
             this.fotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.listaProductosBindingSource, "Foto", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.fotoPictureBox.Location = new System.Drawing.Point(470, 33);
+            this.fotoPictureBox.Location = new System.Drawing.Point(436, 54);
             this.fotoPictureBox.Name = "fotoPictureBox";
             this.fotoPictureBox.Size = new System.Drawing.Size(275, 153);
             this.fotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -497,7 +498,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(528, 214);
+            this.button1.Location = new System.Drawing.Point(486, 214);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 23);
             this.button1.TabIndex = 67;
@@ -507,7 +508,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(649, 213);
+            this.button2.Location = new System.Drawing.Point(607, 214);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(96, 23);
             this.button2.TabIndex = 68;
@@ -535,7 +536,7 @@
             this.tipoIdComboBox1.DisplayMember = "Descripcion";
             this.tipoIdComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipoIdComboBox1.FormattingEnabled = true;
-            this.tipoIdComboBox1.Location = new System.Drawing.Point(101, 110);
+            this.tipoIdComboBox1.Location = new System.Drawing.Point(116, 110);
             this.tipoIdComboBox1.Name = "tipoIdComboBox1";
             this.tipoIdComboBox1.Size = new System.Drawing.Size(285, 21);
             this.tipoIdComboBox1.TabIndex = 70;
@@ -549,19 +550,39 @@
             this.descripcionComboBox.DisplayMember = "Descripcion";
             this.descripcionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.descripcionComboBox.FormattingEnabled = true;
-            this.descripcionComboBox.Location = new System.Drawing.Point(101, 139);
+            this.descripcionComboBox.Location = new System.Drawing.Point(116, 139);
             this.descripcionComboBox.Name = "descripcionComboBox";
             this.descripcionComboBox.Size = new System.Drawing.Size(285, 21);
             this.descripcionComboBox.TabIndex = 71;
             this.descripcionComboBox.ValueMember = "Id";
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(428, 28);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(194, 20);
+            this.textBox2.TabIndex = 72;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(628, 26);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 73;
+            this.button3.Text = "Buscar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // FormProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(779, 755);
+            this.ClientSize = new System.Drawing.Size(723, 749);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(descripcionLabel1);
             this.Controls.Add(this.descripcionComboBox);
             this.Controls.Add(tipoIdLabel1);
@@ -585,10 +606,9 @@
             this.Controls.Add(precioLabel);
             this.Controls.Add(this.precioTextBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.listaProductosDataGridView);
             this.Controls.Add(this.listaProductosBindingNavigator);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Name = "FormProducto";
             this.Text = "Producto";
             this.Load += new System.EventHandler(this.FormProducto_Load);
@@ -637,9 +657,7 @@
         private System.Windows.Forms.TextBox medicamentoTextBox;
         private System.Windows.Forms.TextBox precioTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ToolStripButton Cancelar;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCancelar;
         private System.Windows.Forms.PictureBox fotoPictureBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -648,5 +666,7 @@
         private System.Windows.Forms.BindingSource listaCategoriasBindingSource1;
         private System.Windows.Forms.ComboBox tipoIdComboBox1;
         private System.Windows.Forms.ComboBox descripcionComboBox;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button3;
     }
 }

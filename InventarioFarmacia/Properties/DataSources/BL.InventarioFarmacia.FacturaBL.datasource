@@ -7,8 +7,8 @@
 -->
 <GenericObjectDataSource DisplayName="FacturaBL" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
    <Children>
-      <GenericObjectDataSource DisplayName="ListaFacturas" Version="1.0">
-         <TypeInfo>BL.InventarioFarmacia.FacturaBL+Factura, BL.InventarioFarmacia, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+      <GenericObjectDataSource DisplayName="ListadeFacturas" Version="1.0">
+         <TypeInfo>BL.InventarioFarmacia.Factura, BL.InventarioFarmacia, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
          <TypeUISetting>
             <PropertyUISettings>
                <PropertyUISetting Name="ClienteId">

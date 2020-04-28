@@ -27,10 +27,21 @@ namespace InventarioFarmacia.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Inventario;Integrated Security" +
-            "=True;Connect Timeout=30")]
+            "=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True")]
         public string InventarioConnectionString {
             get {
                 return ((string)(this["InventarioConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-428J7BQ;Initial Catalog=videojuegos;Integrated Security=True;" +
+            "Encrypt=False;TrustServerCertificate=True")]
+        public string videojuegosConnectionString {
+            get {
+                return ((string)(this["videojuegosConnectionString"]));
             }
         }
     }

@@ -9,24 +9,41 @@ using System.Threading.Tasks;
 
 namespace BL.InventarioFarmacia
 {
-    public class ClienteBL
+public  class ClienteBL
     {
         Contexto _contexto;
 
-        public BindingList<Cliente> ListadeClientes { get; set; }
+        public BindingList<Cliente> ListadeClientes{ get; set; }
 
         public ClienteBL()
         {
             _contexto = new Contexto();
-            ListadeClientes = new BindingList<Cliente>();
-
+            ListadeClientes= new BindingList<Cliente>();
+                              
         }
         public BindingList<Cliente> ObtenerClientes()
         {
-            _contexto.Clientes.Load();
-            ListadeClientes = _contexto.Clientes.Local.ToBindingList();
+            //   _contexto.Clientes.Load();
+            //   ListadeClientes = _contexto.Clientes.Local.ToBindingList();
+
+            ListadeClientes = new  BindingList<Cliente>(
+                 _contexto.Clientes.OrderBy(o => o.Nombre).ToList()
+             );
+
 
             return ListadeClientes;
+        }
+
+        public BindingList<Cliente> ObtenerCliente(string buscar)
+        {
+            var query = _contexto.Clientes
+               .Where(p => p.Nombre.ToLower()
+                .Contains(buscar.ToLower()) == true)
+                       .ToList();
+
+            var resultado = new BindingList<Cliente>(query);
+
+            return resultado;
         }
 
         public void CancelarCambios()
@@ -42,13 +59,13 @@ namespace BL.InventarioFarmacia
         {
             var resultado = new Resultado();
             resultado.Exitoso = true;
+
             if (cliente == null)
             {
-                resultado.Mensaje = "Agregue un cliente valido por favor";
+                resultado.Mensaje = "Agregue un Cliente Valido";
                 resultado.Exitoso = false;
 
                 return resultado;
-
             }
 
             if (string.IsNullOrEmpty(cliente.Correo) == true)
@@ -71,7 +88,8 @@ namespace BL.InventarioFarmacia
             resultado.Mensaje = "Cliente Guardado Exitosamente";
             resultado.Exitoso = true;
             return resultado;
-        }
+
+        }    
         public void AgregarCliente()
         {
             var nuevoCliente = new Cliente();
@@ -80,7 +98,7 @@ namespace BL.InventarioFarmacia
 
         public BindingList<Cliente> ObtenerCliente()
         {
-            _contexto.Clientes.Load();
+            _contexto.Clientes.Load(); 
 
             ListadeClientes = _contexto.Clientes.Local.ToBindingList();
 
@@ -91,7 +109,7 @@ namespace BL.InventarioFarmacia
         {
             foreach (var cliente in ListadeClientes.ToList())
             {
-                if (cliente.Id == id)
+                if (cliente.Id ==  id)
                 {
                     ListadeClientes.Remove(cliente);
                     _contexto.SaveChanges();
@@ -100,8 +118,25 @@ namespace BL.InventarioFarmacia
             }
             return false;
         }
-    }
-}
         
-      
 
+    }
+    public class Cliente
+    {
+
+        public int Id { get; set; }
+        public string Rtn { get; set; }//campo para identidad o rtn
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Direccion { get; set; }
+        public string Correo { get; set; }
+        public bool Activo { get; set; }
+
+        public Cliente()
+        {
+            Activo = true;
+        }
+
+    }
+
+}
